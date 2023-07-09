@@ -1,6 +1,6 @@
 const router = require ('./routes/EmployeeRoutes')
 const routers=require ('./routes/HRRoutes');
-
+const routes = require ('./routes/TKRoutes');
 
 const express = require('express');
 const app = express();
@@ -9,6 +9,7 @@ const PORT = 5000;
 
 app.use(router);
 app.use(routers);
+app.use(routes);
 
 //Employee routes
 app.post('/api/employee/login', (req, res) => {
