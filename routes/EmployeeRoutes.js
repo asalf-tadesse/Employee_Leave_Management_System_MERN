@@ -10,6 +10,7 @@ const router = express.Router();
 //     res.send('request page');
 // });
 
+// Employee route
 router.post('/api/employee/login', (req, res) => {
     res.send('login page');
 });
