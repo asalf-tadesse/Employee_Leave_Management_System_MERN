@@ -31,6 +31,6 @@ routers.put('/api/hr/leave/policy', (req, res) => {
     res.send('policy update page');
 });
 
-app.patch('/api/hr/leave/request', (req, res) => {
+routers.patch('/api/hr/leave/request', (req, res) => {
     res.send('leave patch page');
 });
