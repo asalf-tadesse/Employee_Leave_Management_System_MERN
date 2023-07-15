@@ -63,11 +63,11 @@ app.patch('/api/hr/leave/request', (req, res) => {
 });
 
 //Time keeper routes
-app.put('api/tk/employees', (req, res) => {
+app.put('/api/tk/employees', (req, res) => {
     res.send('Timekeeper page');
 });
 
-app.all('api/a/b/c/d', (req, res) => {
+app.all('/api/a/b/c/d', (req, res) => {
     res.send('Timekeeper page');
 });
 */
