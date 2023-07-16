@@ -1,9 +1,9 @@
 const express=require('express');
-const routers=express.Router();
-
+const routes=express.Router();
+module.exports = routes;
 
 // Time Keeper routes
-routers.put('/tk/employees', (req, res, next) => {
+routes.put('api/tk/employees', (req, res) => {
     res.send('Timekeeper page');
     next(); {
         res.send('Timekeeper employee page');
@@ -15,5 +15,3 @@ routers.put('/tk/employees', (req, res, next) => {
     res.send('Employees');
     res.end();
 });
-
-module.exports = routers;
