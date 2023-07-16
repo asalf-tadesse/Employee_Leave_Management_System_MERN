@@ -1,36 +1,50 @@
-const express=require('express');
-const routers=express.Router();
-module.exports=routers;
+const express = require('express');
+const router = express.Router();
+
 
 // HR routers 
-routers.post('/api/hr/employees/register', (req, res) => {
-    res.send('emp register page');
+router.post('/api/hr/employees/register', (req, res) => {
+    //res.send('emp register page');
+    //const {name, basic} = req.body;
+    //res.json(req.body);
+    const {name, basic} = req.body;
+    if (!name || !basic) {
+        throw new Error ('Please provide a name and basic');
+    }
+    else {
+        res.send(JSON.stringify(name));
+        console.log(req.body.name);
+    }
+
+    //res.send(req.body);
 });
 
-routers.get('/api/hr/employees/:id', (req, res) => {
+router.get('/api/hr/employees/:id', (req, res) => {
     res.send('view emp page');
 });
 
-routers.put('/api/hr/employees/register/:id', (req, res) => {
+router.put('/api/hr/employees/register/:id', (req, res) => {
     res.send('edit emp page');
 });
 
-routers.delete('/api/hr/register/:id', (req, res) => {
+router.delete('/api/hr/register/:id', (req, res) => {
     res.send('del emp page');
 });
 
-routers.post('/api/hr/leave/policy', (req, res) => {
+router.post('/api/hr/leave/policy', (req, res) => {
     res.send('create policy page');
 });
 
-routers.get('/api/hr/leave/policy', (req, res) => {
+router.get('/api/hr/leave/policy', (req, res) => {
     res.send('put policy page');
 });
 
-routers.put('/api/hr/leave/policy', (req, res) => {
+router.put('/api/hr/leave/policy', (req, res) => {
     res.send('policy update page');
 });
 
-routers.patch('/api/hr/leave/request', (req, res) => {
+router.patch('/api/hr/leave/request', (req, res) => {
     res.send('leave patch page');
 });
+
+module.exports=router;

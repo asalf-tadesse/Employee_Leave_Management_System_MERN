@@ -2,27 +2,20 @@
 const express = require('express');
 const router = express.Router();
 
-// app.post('/api/employee/login', (req, res) => {
-//     res.send('login page');
-// });
-
-// app.post('/api/employee/leave/request', (req, res) => {
-//     res.send('request page');
-// });
-
 // Employee route
-router.post('/api/employee/login', (req, res) => {
+router.post('/employee/login', (req, res) => {
     res.send('login page');
+    res.send('employee login page');
 });
 
-router.post('/api/employee/leave/request', (req, res) => {
+router.post('/employee/leave/request', (req, res) => {
     res.send('request page');
 });
-router.get('/api/employee/leave/history', (req, res) => {
+router.get('/employee/leave/history', (req, res) => {
     res.send('history page');
 });
 
-router.put('/api/employee/profile', (req, res) => {
+router.put('/employee/profile', (req, res) => {
     res.send('profile page');
 });
 
